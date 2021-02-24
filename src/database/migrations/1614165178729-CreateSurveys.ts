@@ -1,11 +1,11 @@
 /* eslint-disable class-methods-use-this */
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export default class CreateUsers1614084359737 implements MigrationInterface {
+export default class CreateSurveys1614165178729 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'users',
+        name: 'surveys',
         columns: [
           {
             name: 'id',
@@ -13,11 +13,11 @@ export default class CreateUsers1614084359737 implements MigrationInterface {
             isPrimary: true,
           },
           {
-            name: 'name',
+            name: 'title',
             type: 'varchar',
           },
           {
-            name: 'email',
+            name: 'description',
             type: 'varchar',
           },
           {
@@ -31,6 +31,6 @@ export default class CreateUsers1614084359737 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('users');
+    await queryRunner.dropTable('surveys');
   }
 }
