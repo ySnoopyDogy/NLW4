@@ -6,7 +6,7 @@ import {
 import { v4 as uuid } from 'uuid';
 
 @Entity('users')
-class Survey {
+class User {
   @PrimaryColumn()
   readonly id: string
 
@@ -24,4 +24,4 @@ class Survey {
   }
 }
 
-export default Survey;
+export default User;
